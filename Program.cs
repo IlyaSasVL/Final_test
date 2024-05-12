@@ -39,7 +39,7 @@ void print_array(string[] stringArray)
     //     Console.Write($"‘{stringArray[i]}’, ");
     //     if
     // }
-    Console.WriteLine(string.Join(" , ", stringArray));
+    Console.Write(string.Join(", ", stringArray));
     Console.Write("]");
 }
 void Main()
