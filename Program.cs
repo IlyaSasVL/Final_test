@@ -3,15 +3,18 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
+// Метод для ввода исходного массива
 void input_array(string[] stringArray)
 {
-    for (int i = 0; i < stringArray!.Length; i++)
+    for (int i = 0; i < stringArray.Length; i++)
     {
         Console.WriteLine($"Введите {i + 1} элемент массива");
         stringArray[i] = Console.ReadLine()!;
     }
 }
-string[] sym_number(string[] stringArray)
+
+// Метод для подсчета элементов исходного масиива длиной меньше, либо равной 3
+int res_strings_mumber(string[] stringArray)
 {
     int n = 0;
     for (int i = 0; i < stringArray.Length; i++)
@@ -19,35 +22,40 @@ string[] sym_number(string[] stringArray)
         if (stringArray[i].Length <= 3)
             n++;
     }
-    string[] rez = new string[n];
+    return n;
+}
+
+// Метод для формирования массива элементов длиной меньше, либо равной 3
+string[] resultArr(string[] array, int n)
+{
+    string[] Rezult_arr = new string[n];
     int j = 0;
-    for (int i = 0; i < stringArray.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (stringArray[i].Length <= 3)
+        if (array[i].Length <= 3)
         {
-            rez[j] = stringArray[i];
+            Rezult_arr[j] = array[i];
             j++;
         }
     }
-    return rez;
+    return Rezult_arr;
 }
-void print_array(string[] stringArray)
+
+// Метод для вывода результата
+void print_array(string[] array)
 {
     Console.Write("[");
-    // for (int i = 0; i < stringArray.Length; i++)
-    // {
-    //     Console.Write($"‘{stringArray[i]}’, ");
-    //     if
-    // }
-    Console.Write(string.Join(", ", stringArray));
+    Console.Write(string.Join(", ", array));
     Console.Write("]");
 }
+
+
 void Main()
 {
     Console.Write("Введите количество элементов массива: ");
     int m = Convert.ToInt32(Console.ReadLine());
     string[] stringArray = new string[m];
     input_array(stringArray);
-    print_array(sym_number(stringArray));
+    print_array(resultArr(stringArray, res_strings_mumber(stringArray)));
 }
 Main();
