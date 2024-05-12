@@ -14,7 +14,7 @@ void input_array(string[] stringArray)
 }
 
 // Метод для подсчета элементов исходного масиива длиной меньше, либо равной 3
-int res_strings_mumber(string[] stringArray)
+int r(string[] stringArray)
 {
     int n = 0;
     for (int i = 0; i < stringArray.Length; i++)
